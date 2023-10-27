@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+
+import usePage from "@/store/currPage";
 
 const MENU = [
   {
@@ -20,14 +24,20 @@ const MENU = [
     link: "/about",
   },
   {
+    text: "P&R",
+    link: "/PR",
+  },
+  {
     text: "Contato",
     link: "/contact",
   },
 ];
 
 const Nav = () => {
+  const { page } = usePage();
+
   return (
-    <div className="max-w-7xl mx-auto h-12 flex justify-end z-20">
+    <div className="max-w-7xl mx-auto h-14 flex justify-end z-20">
       <div className="flex justify-between items-center w-full  rounded-xl my-2 mr-5">
         <Image
           className="ml-5"
@@ -38,7 +48,13 @@ const Nav = () => {
         />
         <div className="flex justify-around">
           {MENU.map((item, index) => (
-            <Link href={item.link} key={index} className="mx-2">
+            <Link
+              href={item.link}
+              key={index}
+              className={`mx-2 hover:animate-pulse hover:font-bold ${
+                index === page && "animate-bounce"
+              }`}
+            >
               {item.text}
             </Link>
           ))}

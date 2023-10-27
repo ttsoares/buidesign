@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
+
+import usePage from "/store/currPage.js";
 
 const AccordionItem = ({ header, ...rest }) => (
   <Item
@@ -39,7 +41,7 @@ const DATA = [
   {
     pergunta: "O que é um CMS ?",
     resposta:
-      "É a sigla en Inglês para 'Content Management System' cuja tradução é 'Sistema para gestão de Conteúdo'. Com essa ferramenta é possível modificar informações apresentadas em uma página sem que seja necessário programação. Imagens e textos podem ser modificados pelo adminstrator simplismente enviando arquivos para o servidr onde a página é hospedada.",
+      "É a sigla en Inglês para 'Content Management System' cuja tradução é 'Sistema para Gestão de Conteúdo'. Com essa ferramenta é possível modificar informações apresentadas em uma página sem que seja necessário programação. Imagens e textos podem ser editados pelo adminstrator simplismente enviando arquivos para o servidor onde a página é hospedada.",
   },
   {
     pergunta: "Quais informações preicisamos para começar ?",
@@ -49,7 +51,7 @@ const DATA = [
   {
     pergunta: "O que são Figma e Sketch ?",
     resposta:
-      "São softwares usados no ramos do design. O Figma roda no Windows e no Linux. O Sketch roda no IOS da Apple. São instrumentos para auxiliar no processo criativo e que facilitam a tarefa dos programadores em transformar o projeto em código que renderize o conteudo.",
+      "São softwares usados no ramos do design. O Figma roda no Windows e no Linux. O Sketch roda no IOS da Apple. São instrumentos para auxiliar no processo criativo e que facilitam a tarefa dos programadores em transformar o projeto em código que renderize a interface.",
   },
   {
     pergunta: "O que uma 'Landing Page' ?",
@@ -62,13 +64,35 @@ const DATA = [
       "Sapiranga, Rio Grande do Sul, Brasil. Distante 85 Km de Porto Alegre, a capital do estado.",
   },
   {
-    pergunta: "Quanto formam nossa equipe ?",
+    pergunta: "Quantos formam nossa equipe ?",
     resposta:
       "Somos quatro pessoas de diversas áreas. A página 'Sobre' mostra mais detalhes sobre cada um.",
+  },
+  {
+    pergunta: "O que significa UI ?",
+    resposta:
+      "É a singla em Inglês para 'User Interface' cuja tradição é 'Interface do Usuário'. É o que o usuário encherga na tela do dispositivo. É o conjunto dos elementos visuais com os quais a pessoa interage.",
+  },
+  {
+    pergunta: "O que quer dizer UX ?",
+    resposta:
+      "Em Inglês 'User eXperience' ou 'Experiência do Usuário'. São as emoções, conclusões e resultados obtidos pelo usuário ao percorrer a Jornada de interações com as interfaces do sistema.",
+  },
+  {
+    pergunta: "O que se entende por Jornada do Usuário ?",
+    resposta:
+      "A Jornada do usuário (ou Jornada do cliente) é a sequência de passos, em um determinado senário, que o usuário segue para atingir o objetivo desejado pelo usuário.",
   },
 ];
 
 const Page = () => {
+  const { choose } = usePage();
+
+  useEffect(() => {
+    choose(4);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="my-4 border-t w-[87%] mx-auto h-screen">
       <Accordion transition transitionTimeout={200}>

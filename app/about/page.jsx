@@ -1,6 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
+
+import usePage from "/store/currPage.js";
 
 const Pahe = () => {
+  const { choose } = usePage();
+
+  useEffect(() => {
+    choose(3);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="w-full h-screen p-24">
       <section className="w-[80%] h-screen mx-auto">

@@ -1,6 +1,19 @@
+"use client";
+
+import React, { useEffect } from "react";
+
 import Image from "next/image";
 
+import usePage from "/store/currPage.js";
+
 export default function Home() {
+  const { choose } = usePage();
+
+  useEffect(() => {
+    choose(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <main className="flex w-full h-[calc(100%-6%)] flex-col items-start justify-center">
       <div className=" relative w-full h-full">

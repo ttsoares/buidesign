@@ -1,8 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import usePage from "/store/currPage.js";
+
 const Page = () => {
+  const { choose } = usePage();
+
+  useEffect(() => {
+    choose(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="w-full h-full">
       <h2 className="w-fit mx-auto text-5xl p-6 mb-10">

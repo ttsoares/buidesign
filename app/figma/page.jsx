@@ -1,54 +1,65 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
+
+import usePage from "@/store/currPage";
 
 const STEPS = [
   {
     titulo: "1. Projeto Figma/Sketch:",
     texto:
-      "First, a designer creates a visual design of a website or app in Figma. This design includes everything from the layout of elements (like buttons and images) to the colors, fonts, and spacing between them. It's like creating a blueprint for how the website should look.",
+      "Primeiro o designer cria o projeto visual da interface com o usuário (UI) com uma ferramenta como Figma ou Sketch. Este projeto inclui todo o necessário, desde layout de elementos (como botões e imagens) até palete de cores, fontes de caracteres, espaçamentos, etc... É a definiçã de tudo sobre a identidade visual.",
   },
   {
     titulo: "2. Inspeção e Medições:",
     texto:
-      "Developers inspect the Figma design to understand its structure. They look at how different elements are positioned, how big they are, and what colors and fonts are used. It's like taking measurements and notes from the blueprint.",
+      "Os desenvolvedores estudam o design para compreender sua estruturação. Observam como cada elemento é posicionado, seu tamanho e proporções, quais cores e fontes são usadas. Algo como fazer anotações que ajudeu a esclarecer tudo sobr o projeto.",
   },
   {
     titulo: "3. Estrutura HTML:",
     texto:
-      "Based on the design, developers write HTML code. HTML is like the skeleton of a webpage. They create containers for different sections and elements, like headers, navigation menus, content areas, and footers. These containers are like the frame of the car.",
+      "Baseando-se no projeto os desenvolvedores escrevem o código HTML que é o esqueleto da página. São definidos limites e hierarquidas para as diferentes seções e elementos. Elementos como cabeçalhos, menus, áreas com conteúdo e rodapés. Esses containers sã como o chassi de um automóvel.",
   },
   {
     titulo: "4. Formatação com CSS:",
     texto:
-      "To make the webpage look like the Figma design, developers use CSS (Cascading Style Sheets). They specify the colors, fonts, sizes, and positions of elements in the HTML. This is like painting the car and adding details to match the design's colors and styles.",
+      "Para reprodusir fielmente a aparência do design os programadores usam a linguagem CSS ('Cascading Style Sheets'). Com isso são definidas as posições dos elementos em relação ao espaço disponível e entre si. Cores, fontes de caracteres, animações, reações às ações do usuário, etc... Isso seria como pintar o carro, escolher acessórios e enfeites.",
   },
   {
     titulo: "5. Imagens e Media:",
     texto:
-      "If the design includes images, developers add these to the code. It's like placing stickers or logos on the car according to the design.",
+      "Se o projeto incluir elementos de midia (imagens, videos e sons) esse conteúdo é inserido na estrutura formada pelo HTML + CSS. ",
   },
   {
     titulo: "6. Responsividade:",
     texto:
-      "Figma designs are often made for different screen sizes (like desktop and mobile). Developers use responsive design techniques to ensure the website looks good on various devices. This is similar to making sure the car's design works for both a small sports car and a large SUV.",
+      "Atualmente os projetos devem estar adequados a telas de diferentes tamanhos (como desktops, tables e celulares). Os desenvolvedores usam técnicas de responsvidade para garantir a interface pareça bem em diferentes dispositivos. Isso equivaleria a projetar o carro tanto para pistas de corrida quanto para situações 'fora-de-estrada'",
   },
   {
     titulo: "7. Interatividade com JS:",
     texto:
-      "If the design includes interactive features like buttons, forms, or animations, developers use JavaScript to make them work. It's like adding an engine to the car that lets it move and respond to driver input.",
+      "Quando o design inclui funcionalidades como botões, formulários ou animações usa-se Javascript para oferecer a interatividade. Na analogia do carro seria como instalar o motor e os acionadores mecãnicos que produzem os movimentos",
   },
   {
     titulo: "8. Testest e Correções: ",
     texto:
-      "Developers test the website in various web browsers to ensure it looks and works as expected. They fix any issues, just like a car goes through quality control and gets fixed if there are problems.",
+      "Então o conjunto é testato em diversos navegadores diferents para garantir que a aparẽncia e comportamentos sejam os mesmos e dentro do esperado. Seria como o controle de qualidade feito no carro após a linha de produção.",
   },
   {
     titulo: "9. Hospedagem na Nuvem:",
     texto:
-      "Finally, the coded website is hosted on a web server and made accessible on the internet. It's like driving the car out of the factory and putting it on the road for people to use.",
+      "E, finalmente, o código da página é hospeado em um servidor (ou núvem) na Internet. Na metáfora do carro seria o seu dono fazendo uso do veículo no que lhe aprouver",
   },
 ];
 
 const Page = () => {
+  const { choose } = usePage();
+
+  useEffect(() => {
+    choose(9); // Não corresponde a nenhum dos items do menu
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="w-[80%] flex flex-col mx-auto">
       <p className="mb-3 font-bold">

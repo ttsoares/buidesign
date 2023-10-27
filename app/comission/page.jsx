@@ -7,6 +7,8 @@ import Link from "next/link";
 
 import ContactForm from "@/components/Form";
 
+import usePage from "/store/currPage.js";
+
 const LEGENDA = [
   ["Tem desing", "Do zero", "Reconstruir"],
   ["Landing", "Pessoal", "Empresa"],
@@ -16,7 +18,13 @@ const LEGENDA = [
 ];
 
 const Page = () => {
-  useEffect(() => emailjs.init("CFMMXCFGd0f_hv9k2"), []);
+  const { choose } = usePage();
+
+  useEffect(() => {
+    emailjs.init("CFMMXCFGd0f_hv9k2");
+    choose(2);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Formulário
   const [formData, setFormData] = useState({
@@ -245,11 +253,12 @@ const Page = () => {
         setFormData={setFormData}
         submit={submit}
       />
-      <div className="w-80 mt-3 mx-auto bg-gray-600 px-5 py-2 rounded-xl text-white text-xl">
-        <p>Ficou com dúvidas ?</p>
-        <Link className="font-bold text-yellow-300" href="/PR">
-          Algumas respostas aqui...
+      <div className="mt-3 mx-auto bg-gray-600 px-5 py-2 rounded-xl text-white text-sm flex w-fit">
+        <p>Ficou com dúvidas? No menu</p>
+        <Link className="mx-2 font-bold text-yellow-300" href="/PR">
+          &apos;P&R&apos;
         </Link>
+        <p>pode ajudar.</p>
       </div>
     </section>
   );
