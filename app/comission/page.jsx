@@ -7,8 +7,6 @@ import Link from "next/link";
 
 import ContactForm from "@/components/Form";
 
-import usePage from "/store/currPage.js";
-
 const LEGENDA = [
   ["Tem desing", "Do zero", "Reconstruir"],
   ["Landing", "Pessoal", "Empresa"],
@@ -18,12 +16,8 @@ const LEGENDA = [
 ];
 
 const Page = () => {
-  const { choose } = usePage();
-
   useEffect(() => {
     emailjs.init("CFMMXCFGd0f_hv9k2");
-    choose(2);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Formulário

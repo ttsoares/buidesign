@@ -1,23 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-
-import Link from "next/link";
 
 import ContactForm from "@/components/Form";
 
-import usePage from "/store/currPage.js";
-
 const Page = () => {
-  const { choose } = usePage();
-
-  useEffect(() => {
-    emailjs.init("CFMMXCFGd0f_hv9k2");
-    choose(5);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   // Formulário
   const [formData, setFormData] = useState({
     firstName: "",

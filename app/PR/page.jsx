@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
-
-import usePage from "/store/currPage.js";
 
 const AccordionItem = ({ header, ...rest }) => (
   <Item
@@ -74,7 +72,7 @@ const DATA = [
       "É a singla em Inglês para 'User Interface' cuja tradição é 'Interface do Usuário'. É o que o usuário encherga na tela do dispositivo. É o conjunto dos elementos visuais com os quais a pessoa interage.",
   },
   {
-    pergunta: "O que quer dizer UX ?",
+    pergunta: "E sobre UX ?",
     resposta:
       "Em Inglês 'User eXperience' ou 'Experiência do Usuário'. São as emoções, conclusões e resultados obtidos pelo usuário ao percorrer a Jornada de interações com as interfaces do sistema.",
   },
@@ -86,13 +84,6 @@ const DATA = [
 ];
 
 const Page = () => {
-  const { choose } = usePage();
-
-  useEffect(() => {
-    choose(4);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <div className="my-4 border-t w-[70%] mx-auto h-screen">
       <h1 className="w-fit mx-auto text-2xl font-bold my-5">

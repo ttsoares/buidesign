@@ -2,9 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
-
-import usePage from "@/store/currPage";
 
 const MENU = [
   {
@@ -34,7 +33,7 @@ const MENU = [
 ];
 
 const Nav = () => {
-  const { page } = usePage();
+  const pathname = usePathname();
 
   return (
     <nav className="w-full bg-gradient-to-r from-slate-600 to-slate-200">
@@ -53,7 +52,7 @@ const Nav = () => {
                 href={item.link}
                 key={index}
                 className={`mx-2 hover:animate-pulse hover:font-bold ${
-                  index === page && "animate-bounce"
+                  pathname === item.link && "animate-bounce"
                 }`}
               >
                 {item.text}

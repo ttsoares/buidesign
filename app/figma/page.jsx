@@ -1,8 +1,4 @@
-"use client";
-
-import React, { useEffect } from "react";
-
-import usePage from "@/store/currPage";
+import React from "react";
 
 const STEPS = [
   {
@@ -53,13 +49,6 @@ const STEPS = [
 ];
 
 const Page = () => {
-  const { choose } = usePage();
-
-  useEffect(() => {
-    choose(9); // Não corresponde a nenhum dos items do menu
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <div className="w-[80%] flex flex-col mx-auto">
       <p className="mb-3 font-bold">
