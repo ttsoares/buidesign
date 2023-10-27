@@ -253,7 +253,7 @@ const Page = () => {
         setFormData={setFormData}
         submit={submit}
       />
-      <div className="mt-3 mx-auto bg-gray-600 px-5 py-2 rounded-xl text-white text-sm flex w-fit">
+      <div className="mt-10 mx-auto bg-gray-600 px-5 py-2 rounded-xl text-white text-sm flex w-fit">
         <p>Ficou com dúvidas? No menu</p>
         <Link className="mx-2 font-bold text-yellow-300" href="/PR">
           &apos;P&R&apos;

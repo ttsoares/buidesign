@@ -51,7 +51,7 @@ const DATA = [
   {
     pergunta: "O que são Figma e Sketch ?",
     resposta:
-      "São softwares usados no ramos do design. O Figma roda no Windows e no Linux. O Sketch roda no IOS da Apple. São instrumentos para auxiliar no processo criativo e que facilitam a tarefa dos programadores em transformar o projeto em código que renderize a interface.",
+      "São softwares usados no ramo do design. O Figma roda no Windows e no Linux. O Sketch roda no IOS da Apple. São instrumentos para auxiliar no processo criativo e que facilitam a tarefa dos programadores em transformar o projeto em código que renderize a UI.",
   },
   {
     pergunta: "O que uma 'Landing Page' ?",
@@ -94,7 +94,10 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="my-4 border-t w-[87%] mx-auto h-screen">
+    <div className="my-4 border-t w-[70%] mx-auto h-screen">
+      <h1 className="w-fit mx-auto text-2xl font-bold my-5">
+        Frequentes perguntas e suas respostas
+      </h1>
       <Accordion transition transitionTimeout={200}>
         {DATA.map((item, index) => (
           <AccordionItem key={index} header={item.pergunta}>

@@ -25,7 +25,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="absolute top-20 left-0 w-full hidden md:block h-[calc(100%-15%)] bg-gradient-to-b from-white to-black mix-blend-multiply"></div>
+      <div className="absolute top-20 left-0 w-full hidden md:block h-[calc(100%-12%)] bg-gradient-to-b from-white to-black mix-blend-multiply"></div>
 
       <div className="absolute top-1/3 left-[5%]">
         <h1 className="text-6xl italic font-extrabold">
