@@ -57,7 +57,7 @@ const DATA = [
       "É uma única página que apresenta um produto ou serviço e mostra suas vantages e qualidades. O objetivo é atingir o que se define como 'conversão'. O termo conversão se refere a convencer a pessoa a aceitar a proposta mostrada na página que pode ser uma compra, assinar um serviço, etc... ",
   },
   {
-    pergunta: "Onde fia nossa sede ?",
+    pergunta: "Onde fica nossa sede ?",
     resposta:
       "Sapiranga, Rio Grande do Sul, Brasil. Distante 85 Km de Porto Alegre, a capital do estado.",
   },
@@ -79,7 +79,7 @@ const DATA = [
   {
     pergunta: "O que se entende por Jornada do Usuário ?",
     resposta:
-      "A Jornada do usuário (ou Jornada do cliente) é a sequência de passos, em um determinado senário, que o usuário segue para atingir o objetivo desejado pelo usuário.",
+      "A Jornada do usuário (ou Jornada do cliente) é a sequência de passos, em um determinado senário, que o usuário segue para atingir o objetivo que busca.",
   },
 ];
 

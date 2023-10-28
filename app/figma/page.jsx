@@ -9,17 +9,17 @@ const STEPS = [
   {
     titulo: "2. Inspeção e Medições:",
     texto:
-      "Os desenvolvedores estudam o design para compreender sua estruturação. Observam como cada elemento é posicionado, seu tamanho e proporções, quais cores e fontes são usadas. Algo como fazer anotações que ajudeu a esclarecer tudo sobr o projeto.",
+      "Os desenvolvedores estudam o design para compreender sua estruturação. Observam como cada elemento é posicionado, seu tamanho e proporções, quais cores e fontes são usadas. Algo como fazer anotações que ajudem a esclarecer tudo sobre o projeto.",
   },
   {
     titulo: "3. Estrutura HTML:",
     texto:
-      "Baseando-se no projeto os desenvolvedores escrevem o código HTML que é o esqueleto da página. São definidos limites e hierarquidas para as diferentes seções e elementos. Elementos como cabeçalhos, menus, áreas com conteúdo e rodapés. Esses containers sã como o chassi de um automóvel.",
+      "Com baseando no projeto os desenvolvedores escrevem o código HTML que é o esqueleto da página. São definidos limites e hierarquidas para as diferentes sessões e elementos. Como cabeçalhos, menus, áreas com conteúdo e rodapés. Esses containers são como o chassi de um automóvel.",
   },
   {
     titulo: "4. Formatação com CSS:",
     texto:
-      "Para reprodusir fielmente a aparência do design os programadores usam a linguagem CSS ('Cascading Style Sheets'). Com isso são definidas as posições dos elementos em relação ao espaço disponível e entre si. Cores, fontes de caracteres, animações, reações às ações do usuário, etc... Isso seria como pintar o carro, escolher acessórios e enfeites.",
+      "Para reproduzir fielmente a aparência do design os programadores usam a linguagem CSS ('Cascading Style Sheets'). Com isso são definidas as posições dos elementos em relação ao espaço disponível e entre si. Cores, fontes de caracteres, animações, reações às ações do usuário, etc... Isso seria como pintar o carro, escolher acessórios e enfeites.",
   },
   {
     titulo: "5. Imagens e Media:",
@@ -29,7 +29,7 @@ const STEPS = [
   {
     titulo: "6. Responsividade:",
     texto:
-      "Atualmente os projetos devem estar adequados a telas de diferentes tamanhos (como desktops, tables e celulares). Os desenvolvedores usam técnicas de responsvidade para garantir a interface pareça bem em diferentes dispositivos. Isso equivaleria a projetar o carro tanto para pistas de corrida quanto para situações 'fora-de-estrada'",
+      "Atualmente os projetos devem estar adequados à telas de diferentes tamanhos (como desktops, tables e celulares). Os desenvolvedores usam técnicas de responsvidade para garantir a interface pareça bem em diferentes dispositivos. Isso equivaleria a projetar o carro tanto para pistas de corrida quanto para situações 'fora-de-estrada'",
   },
   {
     titulo: "7. Interatividade com JS:",
@@ -44,7 +44,7 @@ const STEPS = [
   {
     titulo: "9. Hospedagem na Nuvem:",
     texto:
-      "E, finalmente, o código da página é hospeado em um servidor (ou núvem) na Internet. Na metáfora do carro seria o seu dono fazendo uso do veículo no que lhe aprouver",
+      "E, finalmente, o código da página é hospeado em um servidor (ou nuvem) na Internet. Na metáfora do carro seria o seu dono fazendo uso do veículo como desejar.",
   },
 ];
 
@@ -54,7 +54,7 @@ const Page = () => {
       <p className="mb-3 font-bold">
         Traduzir um projeto no Figma para um código aceito pelo browser é como
         transformar os desenhos detalhados de um carro em um veículo real.
-        Abaixo há uma versão simplificada de como isso funciona.
+        Abaixo vemos uma versão simplificada de como isso funciona.
       </p>
       {STEPS.map((item, index) => (
         <div className="p-2 flex w-full" key={index}>
