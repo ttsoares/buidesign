@@ -15,6 +15,8 @@ const Page = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   async function submit(event) {
     event.preventDefault();
 
@@ -28,10 +30,21 @@ const Page = () => {
         fone: formData.phoneNumber,
         mensagem: formData.message,
       });
+      setLoading(flase);
       alert("email successfully sent check inbox");
     } catch (error) {
       console.log(error);
     }
+  }
+
+  if (loading) {
+    return (
+      <div className="w-full h-screen ">
+        <div className="flex w-full h-full justify-center items-center">
+          <h1 className=" text-5xl font-bold animate-bounce">Enviando...</h1>
+        </div>
+      </div>
+    );
   }
 
   return (

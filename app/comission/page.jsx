@@ -34,6 +34,7 @@ const Page = () => {
   const [comCMS, setComCMS] = useState(3);
   const [periodo, setPeriodo] = useState(3);
   const [orcamento, setOrcamento] = useState(3);
+  const [loading, setLoading] = useState(false);
 
   async function submit(event) {
     event.preventDefault();
@@ -53,6 +54,7 @@ const Page = () => {
     const templateId = "template_yjte46j";
 
     try {
+      setLoading(true);
       await emailjs.send(serviceId, templateId, {
         nome: formData.firstName + " " + formData.lastName,
         email: formData.email,
@@ -64,6 +66,7 @@ const Page = () => {
         orcamento: LEGENDA[4][orcamento],
         mensagem: formData.message,
       });
+      setLoading(flase);
       alert("email successfully sent check inbox");
     } catch (error) {
       console.log(error);
@@ -91,6 +94,16 @@ const Page = () => {
   // 0 - Menos de 1000, 1 - Entre 1000 e 3000, 2 - Mais de 3000
   function tamanhoOcamento(clicado) {
     setOrcamento(clicado);
+  }
+
+  if (loading) {
+    return (
+      <div className="w-full h-screen ">
+        <div className="flex w-full h-full justify-center items-center">
+          <h1 className=" text-5xl font-bold animate-bounce">Enviando...</h1>
+        </div>
+      </div>
+    );
   }
 
   return (
