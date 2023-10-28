@@ -27,9 +27,10 @@ function ContactForm({ submit }) {
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
         <div className="flex justify-between space-x-8 w-full">
-          <div>
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
             <label htmlFor="firstName">Nome:</label>
             <input
+              className="rounded-md ml-2"
               type="text"
               id="firstName"
               {...register("firstName", {
@@ -42,16 +43,22 @@ function ContactForm({ submit }) {
             <p className="text-red-500">{errors.firstName?.message}</p>
           </div>
 
-          <div>
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
             <label htmlFor="lastName">Sobrenome (caso PF):</label>
-            <input type="text" id="lastName" {...register("lastName")} />
+            <input
+              type="text"
+              className="rounded-md ml-2"
+              id="lastName"
+              {...register("lastName")}
+            />
           </div>
         </div>
 
         <div className="flex justify-between space-x-8 w-full">
-          <div>
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
             <label htmlFor="email">Email:</label>
             <input
+              className="rounded-md ml-2"
               type="email"
               id="email"
               {...register("email", {
@@ -65,25 +72,30 @@ function ContactForm({ submit }) {
             <p className="text-red-500">{errors.email?.message}</p>
           </div>
 
-          <div>
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
             <label htmlFor="phoneNumber">Telefone:</label>
-            <input type="tel" id="phoneNumber" {...register("phoneNumber")} />
+            <input
+              className="rounded-md ml-2"
+              type="tel"
+              id="phoneNumber"
+              {...register("phoneNumber")}
+            />
           </div>
         </div>
 
         <div className="flex w-full justify-between items-center">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
             <label htmlFor="message">Menssagem:</label>
             <textarea
               id="message"
               name="message"
               {...register("message")}
-              className="w-[460px] h-32"
+              className="w-[460px] h-32 rounded-lg ml-2"
             />
           </div>
 
           <button
-            className="px-4 py-3 bg-blue-600 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-50 transition-transform mx-5 flex duration-300"
+            className="px-4 py-3 bg-blue-600 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-50 transition-transform mx-5 flex duration-300 hover:bg-blue-800 hover:border-2"
             type="submit"
           >
             Submeter

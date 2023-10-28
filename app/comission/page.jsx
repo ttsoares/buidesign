@@ -115,7 +115,7 @@ const Page = () => {
               }`}
               onClick={() => pontoPartida(1)}
             >
-              Não tenho nada
+              Partir do zero
             </button>
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
@@ -123,7 +123,7 @@ const Page = () => {
               }`}
               onClick={() => pontoPartida(2)}
             >
-              Refazer algo
+              Reformar
             </button>
           </div>
         </div>
@@ -144,7 +144,7 @@ const Page = () => {
               }`}
               onClick={() => tipoDePagina(1)}
             >
-              Pessoal/Porfolio
+              Pessoal/Porfólio
             </button>
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
@@ -250,7 +250,7 @@ const Page = () => {
         <Link className="mx-2 font-bold text-yellow-300" href="/PR">
           &apos;P&R&apos;
         </Link>
-        <p>pode ajudar.</p>
+        <p>pode lhe ajudar.</p>
       </div>
     </section>
   );
