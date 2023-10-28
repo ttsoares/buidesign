@@ -52,9 +52,9 @@ const Page = () => {
   return (
     <div className="w-[80%] flex flex-col mx-auto">
       <p className="mb-3 font-bold">
-        Translating a design from Figma into code for a web browser is like
-        turning a detailed drawing of a car into a working automobile.
-        Here&pops;s a simplified step-by-step explanation of how it works:
+        Traduzir um projeto no Figma para um código aceito pelo browser é como
+        transformar os desenhos detalhados de um carro em um veículo real.
+        Abaixo há uma versão simplificada de como isso funciona.
       </p>
       {STEPS.map((item, index) => (
         <div className="p-2 flex w-full" key={index}>
@@ -63,10 +63,10 @@ const Page = () => {
         </div>
       ))}
       <p className="mt-3 font-semibold">
-        In a nutshell, Figma is like the design blueprint, and the developers
-        are the builders who use HTML, CSS, and JavaScript to turn that
-        blueprint into a functional and interactive website, just as an
-        automobile is built based on a detailed design.
+        Resumidamente, o Figma produz os desenhos técnicos que os
+        desenvolvedores usam para construir entruturas em HTML, CSS e programas
+        em javascript. Isso transforma um desenho na coisa real que ele
+        representa, seja uma página ou um aplicativo.
       </p>
     </div>
   );
