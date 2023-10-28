@@ -52,22 +52,22 @@ const Page = () => {
     const serviceId = "service_dp8kh53";
     const templateId = "template_yjte46j";
 
-    // try {
-    //   await emailjs.send(serviceId, templateId, {
-    //     nome: formData.firstName + " " + formData.lastName,
-    //     email: formData.email,
-    //     fone: formData.phoneNumber,
-    //     inicio: LEGENDA[0][partida],
-    //     tipo: LEGENDA[1][tipoPagina],
-    //     cms: LEGENDA[2][comCMS],
-    //     cronograma: LEGENDA[3][periodo],
-    //     orcamento: LEGENDA[4][orcamento],
-    //     mensagem: formData.message,
-    //   });
-    //   alert("email successfully sent check inbox");
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      await emailjs.send(serviceId, templateId, {
+        nome: formData.firstName + " " + formData.lastName,
+        email: formData.email,
+        fone: formData.phoneNumber,
+        inicio: LEGENDA[0][partida],
+        tipo: LEGENDA[1][tipoPagina],
+        cms: LEGENDA[2][comCMS],
+        cronograma: LEGENDA[3][periodo],
+        orcamento: LEGENDA[4][orcamento],
+        mensagem: formData.message,
+      });
+      alert("email successfully sent check inbox");
+    } catch (error) {
+      console.log(error);
+    }
   }
   // 0 - tem desing, 1 - do zero, 2 - refazer
   function pontoPartida(clicado) {

@@ -21,17 +21,17 @@ const Page = () => {
     const serviceId = "service_dp8kh53";
     const templateId = "template_yjte46j";
 
-    // try {
-    //   await emailjs.send(serviceId, templateId, {
-    //     nome: formData.firstName + " " + formData.lastName,
-    //     email: formData.email,
-    //     fone: formData.phoneNumber,
-    //     mensagem: formData.message,
-    //   });
-    //   alert("email successfully sent check inbox");
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      await emailjs.send(serviceId, templateId, {
+        nome: formData.firstName + " " + formData.lastName,
+        email: formData.email,
+        fone: formData.phoneNumber,
+        mensagem: formData.message,
+      });
+      alert("email successfully sent check inbox");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
