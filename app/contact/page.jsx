@@ -30,7 +30,7 @@ const Page = () => {
         fone: formData.phoneNumber,
         mensagem: formData.message,
       });
-      setLoading(flase);
+      setLoading(false);
       alert("email successfully sent check inbox");
     } catch (error) {
       console.log(error);
