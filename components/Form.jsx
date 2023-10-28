@@ -1,38 +1,50 @@
 import React from "react";
 
-function ContactForm({ formData, setFormData, submit }) {
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
+import { useForm } from "react-hook-form";
+
+//--------------------------
+function ContactForm({ submit }) {
+  const form = useForm();
+  const { register, handleSubmit, formState } = form;
+  const { errors } = formState;
+
+  function onSubmit(data) {
+    const object = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      message: data.message,
+    };
+
+    submit(object);
+  }
 
   return (
     <div className="flex flex-col justify-center items-center w-[80%] mx-auto">
       <h2 className="mb-5 text-3xl form-font-bold">
         Para que possamos responder seu contato:
       </h2>
-      <form onSubmit={submit} className="space-y-5">
+      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
         <div className="flex justify-between space-x-8 w-full">
           <div>
             <label htmlFor="firstName">Nome:</label>
             <input
               type="text"
               id="firstName"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleInputChange}
-              required
+              {...register("firstName", {
+                required: {
+                  value: true,
+                  message: "É necessário preencher o nome.",
+                },
+              })}
             />
+            <p className="text-red-500">{errors.firstName?.message}</p>
           </div>
+
           <div>
             <label htmlFor="lastName">Sobrenome (caso PF):</label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleInputChange}
-            />
+            <input type="text" id="lastName" {...register("lastName")} />
           </div>
         </div>
 
@@ -42,23 +54,20 @@ function ContactForm({ formData, setFormData, submit }) {
             <input
               type="email"
               id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
+              {...register("email", {
+                pattern: {
+                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                  message: "Isso não parece ser um endereço válio !",
+                },
+                required: "É necessário preencher o email.",
+              })}
             />
+            <p className="text-red-500">{errors.email?.message}</p>
           </div>
 
           <div>
             <label htmlFor="phoneNumber">Telefone:</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              required
-            />
+            <input type="tel" id="phoneNumber" {...register("phoneNumber")} />
           </div>
         </div>
 
@@ -68,8 +77,7 @@ function ContactForm({ formData, setFormData, submit }) {
             <textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleInputChange}
+              {...register("message")}
               className="w-[460px] h-32"
             />
           </div>

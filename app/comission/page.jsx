@@ -20,15 +20,6 @@ const Page = () => {
     emailjs.init("CFMMXCFGd0f_hv9k2");
   }, []);
 
-  // Formulário
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    message: "",
-  });
-
   const [partida, setPartida] = useState(3);
   const [tipoPagina, setTipoPagina] = useState(3);
   const [comCMS, setComCMS] = useState(3);
@@ -36,9 +27,7 @@ const Page = () => {
   const [orcamento, setOrcamento] = useState(3);
   const [loading, setLoading] = useState(false);
 
-  async function submit(event) {
-    event.preventDefault();
-
+  async function submit(resp) {
     if (
       partida === 3 ||
       tipoPagina === 3 ||
@@ -56,18 +45,18 @@ const Page = () => {
     try {
       setLoading(true);
       await emailjs.send(serviceId, templateId, {
-        nome: formData.firstName + " " + formData.lastName,
-        email: formData.email,
-        fone: formData.phoneNumber,
+        nome: resp.firstName + " " + resp.lastName,
+        email: resp.email,
+        fone: resp.phoneNumber,
         inicio: LEGENDA[0][partida],
         tipo: LEGENDA[1][tipoPagina],
         cms: LEGENDA[2][comCMS],
         cronograma: LEGENDA[3][periodo],
         orcamento: LEGENDA[4][orcamento],
-        mensagem: formData.message,
+        mensagem: resp.message,
       });
       setLoading(false);
-      alert("email successfully sent check inbox");
+      alert("Sua encomenda foi enviada com sucesso !");
     } catch (error) {
       console.log(error);
     }
@@ -255,11 +244,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <ContactForm
-        formData={formData}
-        setFormData={setFormData}
-        submit={submit}
-      />
+      <ContactForm submit={submit} />
       <div className="mt-10 mx-auto bg-gray-600 px-5 py-2 rounded-xl text-white text-sm flex w-fit">
         <p>Ficou com dúvidas? No menu</p>
         <Link className="mx-2 font-bold text-yellow-300" href="/PR">

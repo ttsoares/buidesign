@@ -1,37 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 import ContactForm from "@/components/Form";
 
+//------------------
 const Page = () => {
-  // Formulário
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    message: "",
-  });
+  useEffect(() => {
+    emailjs.init("CFMMXCFGd0f_hv9k2");
+  }, []);
 
   const [loading, setLoading] = useState(false);
 
-  async function submit(event) {
-    event.preventDefault();
+  async function submit(resp) {
+    setLoading(true);
 
     const serviceId = "service_dp8kh53";
     const templateId = "template_yjte46j";
 
     try {
       await emailjs.send(serviceId, templateId, {
-        nome: formData.firstName + " " + formData.lastName,
-        email: formData.email,
-        fone: formData.phoneNumber,
-        mensagem: formData.message,
+        nome: resp.firstName + " " + resp.lastName,
+        email: resp.email,
+        fone: resp.phoneNumber,
+        mensagem: resp.message,
       });
       setLoading(false);
-      alert("email successfully sent check inbox");
+      alert("Sua mensagem foi enviada !");
     } catch (error) {
       console.log(error);
     }
@@ -49,11 +45,7 @@ const Page = () => {
 
   return (
     <section className="w-full h-screen">
-      <ContactForm
-        formData={formData}
-        setFormData={setFormData}
-        submit={submit}
-      />
+      <ContactForm submit={submit} />
     </section>
   );
 };
