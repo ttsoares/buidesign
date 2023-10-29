@@ -21,7 +21,7 @@ const Page = () => {
 
     try {
       await emailjs.send(serviceId, templateId, {
-        nome: resp.firstName + " " + resp.lastName,
+        nome: resp.firstName + " from " + resp.company,
         email: resp.email,
         fone: resp.phoneNumber,
         mensagem: resp.message,

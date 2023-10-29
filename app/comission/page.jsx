@@ -45,7 +45,7 @@ const Page = () => {
     try {
       setLoading(true);
       await emailjs.send(serviceId, templateId, {
-        nome: resp.firstName + " " + resp.lastName,
+        nome: resp.firstName + " from " + resp.company,
         email: resp.email,
         fone: resp.phoneNumber,
         inicio: LEGENDA[0][partida],
@@ -96,11 +96,11 @@ const Page = () => {
   }
 
   return (
-    <section className="w-full h-screen mb-52">
+    <section className="w-full h-fit">
       <div className="flex flex-col items-center justify-center mb-5">
         <div className="flex flex-col items-center justify-center mb-5">
           <h1 className="font-bold text-lg p-2">Ponto de partida</h1>
-          <div className=" flex justify-between items-center">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between items-center">
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
                 partida === 0 && "bg-slate-400"
@@ -129,7 +129,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col items-center justify-center mb-5">
           <h1 className="font-bold text-lg p-2">Tipo de página</h1>
-          <div className=" flex justify-between items-center">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center">
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
                 tipoPagina === 0 && "bg-slate-400"
@@ -158,7 +158,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col items-center justify-center mb-5">
           <h1 className="font-bold text-lg p-2">Precisa CMS ?</h1>
-          <div className=" flex justify-between items-center">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center">
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
                 comCMS === 0 && "bg-slate-400"
@@ -187,7 +187,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col items-center justify-center mb-5">
           <h1 className="font-bold text-lg p-2">Cronograma</h1>
-          <div className=" flex justify-between items-center">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center">
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
                 periodo === 0 && "bg-slate-400"
@@ -216,7 +216,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col items-center justify-center mb-5">
           <h1 className="font-bold text-lg p-2">Orçamento</h1>
-          <div className=" flex justify-between items-center">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center">
             <button
               className={`px-4 py-1 mx-5 border-2 border-blue-400 transition-all duration-300 hover:scale-125 ${
                 orcamento === 0 && "bg-slate-400"

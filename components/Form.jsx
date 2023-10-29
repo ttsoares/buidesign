@@ -11,7 +11,7 @@ function ContactForm({ submit }) {
   function onSubmit(data) {
     const object = {
       firstName: data.firstName,
-      lastName: data.lastName,
+      company: data.company,
       email: data.email,
       phoneNumber: data.phoneNumber,
       message: data.message,
@@ -21,16 +21,20 @@ function ContactForm({ submit }) {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center w-[80%] mx-auto">
-      <h2 className="mb-5 text-3xl form-font-bold">
+    <div className="flex flex-col justify-center items-center md:w-[80%] mx-auto">
+      <h2 className="mb-5 text-lg md:text-3xl form-font-bold">
         Para que possamos responder seu contato:
       </h2>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
-        <div className="flex justify-between space-x-8 w-full">
-          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        className="space-y-5 mx-5 w-[70%]"
+      >
+        <div className="flex w-full flex-col justify-between space-y-2">
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110 flex flex-col md:flex-row shrink">
             <label htmlFor="firstName">Nome:</label>
             <input
-              className="rounded-md ml-2"
+              className="shrink flex-1 rounded-md ml-2"
               type="text"
               id="firstName"
               {...register("firstName", {
@@ -43,22 +47,22 @@ function ContactForm({ submit }) {
             <p className="text-red-500">{errors.firstName?.message}</p>
           </div>
 
-          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
-            <label htmlFor="lastName">Sobrenome (caso PF):</label>
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110 flex flex-col md:flex-row shrink">
+            <label htmlFor="lastName">Empresa:</label>
             <input
               type="text"
-              className="rounded-md ml-2"
+              className="shrink flex-1 rounded-md ml-2"
               id="lastName"
               {...register("lastName")}
             />
           </div>
         </div>
 
-        <div className="flex justify-between space-x-8 w-full">
-          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
+        <div className="flex w-full flex-col justify-between space-y-2">
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110 flex flex-col md:flex-row shrink">
             <label htmlFor="email">Email:</label>
             <input
-              className="rounded-md ml-2"
+              className="shrink flex-1 rounded-md ml-2"
               type="email"
               id="email"
               {...register("email", {
@@ -72,10 +76,10 @@ function ContactForm({ submit }) {
             <p className="text-red-500">{errors.email?.message}</p>
           </div>
 
-          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
+          <div className="shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110 flex flex-col md:flex-row shrink">
             <label htmlFor="phoneNumber">Telefone:</label>
             <input
-              className="rounded-md ml-2"
+              className="shrink flex-1 rounded-md ml-2"
               type="tel"
               id="phoneNumber"
               {...register("phoneNumber")}
@@ -83,22 +87,22 @@ function ContactForm({ submit }) {
           </div>
         </div>
 
-        <div className="flex w-full justify-between items-center">
-          <div className="flex justify-center items-center shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110">
+        <div className="flex w-full flex-col justify-between">
+          <div className="flex justify-center items-center shadow-md shadow-indigo-600/50 p-3 border-2 bg-slate-400 border-black rounded-lg transition-all duration-300 hover:scale-110 flex-col md:flex-row shrink">
             <label htmlFor="message">Menssagem:</label>
             <textarea
               id="message"
               name="message"
               {...register("message")}
-              className="w-[460px] h-32 rounded-lg ml-2"
+              className="flex-1 w-full shrink h-32 rounded-lg ml-2"
             />
           </div>
 
           <button
-            className="px-4 py-3 bg-blue-600 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-50 transition-transform mx-5 flex duration-300 hover:bg-blue-800 hover:border-2"
+            className="px-4 py-3 mt-7 min-w-[25%] bg-blue-600 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-x-50 transition-transform mx-5 flex duration-300 hover:bg-blue-800 hover:border-2"
             type="submit"
           >
-            Submeter
+            <span className="self-center w-full">Submeter</span>
           </button>
         </div>
       </form>

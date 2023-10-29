@@ -4,16 +4,16 @@ import Link from "next/link";
 
 const Page = () => {
   return (
-    <div className="w-full h-full">
-      <h1 className="w-fit mx-auto text-5xl">
+    <div className="w-full h-fit mb-20">
+      <h1 className="w-fit mx-auto text-2xl md:text-5xl">
         Projetos Figma traduzidos para React:
       </h1>
       <p className="text-sm w-fit mx-auto mb-12">
         (Clique na imagem para ver a página)
       </p>
-      <div className="flex justify-around items-center w-full">
+      <div className="flex flex-col md:flex-row justify-around items-center w-full space-y-10">
         <div className="flex flex-col justify-center items-center">
-          <h2 className="w-fit mx-auto text-xl  ml-7 mb-2">
+          <h2 className="w-fit mx-auto text-xl  ml-7 mb-10">
             Cálculo do Índice de Massa Corporal
           </h2>
           <Link href="https://bm-index.vercel.app/" target="_blank">
@@ -28,7 +28,7 @@ const Page = () => {
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <h2 className="w-fit mx-auto text-xl pl-6 mb-2">
+          <h2 className="w-fit mx-auto text-xl pl-6 mb-10">
             Criação de senhas fortes
           </h2>
           <Link href="https://pass-generator-pied.vercel.app/" target="_blank">
@@ -43,7 +43,9 @@ const Page = () => {
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <h2 className="w-fit mx-auto text-xl pl-6 mb-2">Sobre os planetas</h2>
+          <h2 className="w-fit mx-auto text-xl pl-6 mb-10">
+            Sobre os planetas
+          </h2>
           <Link href="https://planets-zeta.vercel.app/" target="_blank">
             <div className="relative ml-10 w-80 h-80 transition-all duration-500 hover:scale-125">
               <Image
