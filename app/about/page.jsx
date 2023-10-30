@@ -2,9 +2,9 @@ import React from "react";
 
 const Pahe = () => {
   return (
-    <div className="w-full h-screen p-24">
+    <div className="w-3/4 mx-auto h-fit md:h-screen ">
       <section className="w-[80%] h-screen mx-auto">
-        <h1 className="font-bold text-2xl mb-4">Nosso time:</h1>
+        <h1 className="font-bold text-2xl mt-12 mb-6">Nosso time:</h1>
         <h2 className="font-semibold">Thomas</h2>
         <p>Desenvolverdor React</p>
         <p>NextJS / TailwindCSS. Front e backend.</p>

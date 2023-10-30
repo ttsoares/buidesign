@@ -8,13 +8,13 @@ const Footer = () => {
       <div className="max-w-7xl h-14 flex flex-col md:flex-row items-center justify-between mx-auto">
         <Link
           href="/figma"
-          className="text-sm p-2  text-black hover:animate-bounce hover:cursor-pointer"
+          className="text-sm ml-2 p-2  text-black hover:animate-bounce hover:cursor-pointer"
         >
           Do Figma para para o fronEnd
         </Link>
-        <p className="-ml-[6%]">CopyRight&copy; 2023</p>
+        <p className="md:-ml-[6%]">CopyRight&copy; 2023</p>
         <Image
-          className="hidden md:block"
+          className="hidden md:block mr-5"
           src="/images/logo.png"
           alt="Logo"
           width={80}

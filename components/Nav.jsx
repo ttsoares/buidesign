@@ -48,7 +48,10 @@ const Nav = () => {
       {/* SM */}
       <div className="w-full h-12 p-2 md:hidden">
         <div className="flex justify-between">
-          <div onClick={() => setShowMenu(true)}>
+          <div
+            className="hover:cursor-pointer"
+            onClick={() => setShowMenu(true)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
