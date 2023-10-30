@@ -86,8 +86,8 @@ const DATA = [
 const Page = () => {
   return (
     <div className="my-4 border-t w-[70%] mx-auto h-screen">
-      <h1 className="w-fit mx-auto text-2xl font-bold my-5">
-        Frequentes perguntas e suas respostas
+      <h1 className="w-fit mx-auto text-2xl font-bold my-5 border-2 rounded-lg px-8 py-4 ">
+        Perguntas frequentes e respostas
       </h1>
       <Accordion transition transitionTimeout={200}>
         {DATA.map((item, index) => (

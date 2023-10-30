@@ -57,9 +57,9 @@ const Page = () => {
         Abaixo vemos uma versão simplificada de como isso funciona.
       </p>
       {STEPS.map((item, index) => (
-        <div className="p-2 flex w-full" key={index}>
-          <p className="w-1/5 font-bold">{item.titulo}</p>
-          <p className="w-4/5">{item.texto}</p>
+        <div className="p-2 flex flex-col md:flex-row w-full" key={index}>
+          <p className="w-full md:w-1/5 font-bold">{item.titulo}</p>
+          <p className="w-full md:w-4/5">{item.texto}</p>
         </div>
       ))}
       <p className="mt-3 font-semibold">
