@@ -10,7 +10,7 @@ const Footer = () => {
           href="/figma"
           className="text-sm ml-2 p-2  text-black hover:animate-bounce hover:cursor-pointer"
         >
-          Do Figma para para o frontEnd
+          Do Figma para o frontEnd
         </Link>
         <p className="md:-ml-[6%]">CopyRight&copy; 2023</p>
         <Image
