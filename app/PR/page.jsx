@@ -69,7 +69,7 @@ const DATA = [
   {
     pergunta: "O que significa UI ?",
     resposta:
-      "É a singla em Inglês para 'User Interface' cuja tradição é 'Interface do Usuário'. É o que o usuário encherga na tela do dispositivo. É o conjunto dos elementos visuais com os quais a pessoa interage.",
+      "É a singla em Inglês para 'User Interface' cuja tradução é 'Interface do Usuário'. É o que o usuário encherga na tela do dispositivo. É o conjunto dos elementos visuais com os quais a pessoa interage.",
   },
   {
     pergunta: "E sobre UX ?",
