@@ -8,7 +8,7 @@ export default function Home() {
       <div className=" relative w-full h-full">
         <Image
           src="/images/hero.jpg"
-          alt="Bridge"
+          alt="BuilDesign logo"
           fill
           className="bg-black bg-blend-overlay"
         />
