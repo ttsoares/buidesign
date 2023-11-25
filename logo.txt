@@ -1,0 +1,6 @@
+<p className="text-4xl">
+              <span className="">B</span>
+              uil<span className="italic -ml-1">d</span>
+              <span className="-ml-1 font-bold rounded-full italic">D</span>
+              esign
+            </p>
