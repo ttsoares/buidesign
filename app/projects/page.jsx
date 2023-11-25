@@ -19,7 +19,7 @@ const Page = () => {
           <Link href="https://bm-index.vercel.app/" target="_blank">
             <div className=" rounded-xl relative ml-10 w-80 h-80 transition-all duration-500 hover:scale-110">
               <Image
-                src="/images/BMI-fig.png"
+                src="/images/BMI-fig.webp"
                 alt="BMI in Figma"
                 fill
                 className="rounded-xl"
@@ -34,7 +34,7 @@ const Page = () => {
           <Link href="https://pass-generator-pied.vercel.app/" target="_blank">
             <div className="relative ml-10 w-80 h-80 transition-all duration-500 hover:scale-110">
               <Image
-                src="/images/password-fig.png"
+                src="/images/password-fig.webp"
                 alt="Password generator in Figma"
                 fill
                 className="rounded-xl"
@@ -47,7 +47,7 @@ const Page = () => {
           <Link href="https://planets-zeta.vercel.app/" target="_blank">
             <div className="relative ml-10 w-80 h-80 transition-all duration-500 hover:scale-110">
               <Image
-                src="/images/planets-fig.png"
+                src="/images/planets-fig.webp"
                 alt="Planets facts in Figma"
                 fill
                 className="rounded-xl"
